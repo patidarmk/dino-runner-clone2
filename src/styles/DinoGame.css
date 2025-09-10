@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ground {
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="10" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="5" x2="100" y2="5" stroke="%23a0aec0" stroke-width="2" stroke-dasharray="10 5" /></svg>');
+  background-repeat: repeat-x;
+  animation: scroll-ground 5s linear infinite;
+}
+
+@keyframes scroll-ground {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -200px;
+  }
+}
+
+.dino-jump {
+  animation: jump 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-120px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.dino-run-0 {
+  transform: translateY(0);
+}
+.dino-run-1 {
+  transform: translateY(-2px);
+}
+
+.bird-fly {
+  animation: fly 0.5s infinite alternate ease-in-out;
+}
+
+@keyframes fly {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+.level-up-notification {
+  animation: fade-in-out 2s ease-in-out forwards;
+}
+
+@keyframes fade-in-out {
+  0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+  20% { opacity: 1; transform: scale(1) translateY(0); }
+  80% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(0.8) translateY(20px); }
+}
